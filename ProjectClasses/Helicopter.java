@@ -13,10 +13,13 @@ public class Helicopter extends SearchTeams {
 	
 	public Helicopter( ) {
 		super();
+		URL url = getClass().getResource("/Images/helicoptersymbol.gif");
+		Image original = Toolkit.getDefaultToolkit().getImage(url);
+		thumbnail1 = original.getScaledInstance(32, 32,  Image.SCALE_FAST);
 	}
 	
 	public void updateLocation(Node node) {
-		
+		location = node;
 	}
 	
 	public int getLocation() {
@@ -29,18 +32,7 @@ public class Helicopter extends SearchTeams {
 	
 	@Override
 	public void draw(Graphics g, MediaTracker tracker) {
-		URL url = getClass().getResource("/Images/helicoptersymbol.gif");
-		Image original = Toolkit.getDefaultToolkit().getImage(url);
-		tracker.addImage(original, 1);
-		try {
-			tracker.waitForID(1);
-			tracker.waitForID(2);
-			tracker.waitForID(3);
-		} catch (InterruptedException e) { 
-			return; 
-		}
-		thumbnail1 = original.getScaledInstance(16, 16,  Image.SCALE_FAST);
-		g.drawImage(thumbnail1, location.getX()-8, location.getY()-8, 16, 16, null);
+		g.drawImage(thumbnail1, location.getX()-16, location.getY()-16, 32, 32, null);
 	}
 	
 }

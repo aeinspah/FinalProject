@@ -32,7 +32,6 @@ public class Hiker extends SearchTeams {
 	
 	@Override
 	public void draw(Graphics g, MediaTracker tracker) {
-		System.out.println("Draw Hiker at : " + location.toString());
 		g.drawImage(thumbnail1, location.getX()-16, location.getY()-16, 32, 32, null);
 	}	
 	

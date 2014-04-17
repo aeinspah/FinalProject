@@ -38,7 +38,13 @@ public class Main extends JFrame {
 	    		gui.setVisible(true);
 	    		Hiker h = new Hiker();
 	    		h.updateLocation(new Node(100,100));
+	    		Helicopter h2 = new Helicopter();
+	    		h2.updateLocation(new Node(200,100));
+	    		Dog d = new Dog();
+	    		d.updateLocation(new Node(300,100));
 	    		gui.teams.add(h);
+	    		gui.teams.add(h2);
+	    		gui.teams.add(d);
 	    		gui.img.repaint();
 	        } 
 	    });
