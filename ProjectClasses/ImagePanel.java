@@ -11,9 +11,12 @@ import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel {
 	private Image thumbnail;
-	public ImagePanel() {
+	Main main;
+	MediaTracker tracker;
+	public ImagePanel(Main m) {
+		main = m;
 		this.setPreferredSize(new Dimension(600,600));
-		MediaTracker tracker = new MediaTracker(this);
+		tracker = new MediaTracker(this);
 		URL url = getClass().getResource("/Images/forestmap.jpg");
 		Image original = Toolkit.getDefaultToolkit().getImage(url);
 		tracker.addImage(original, 0);
@@ -27,5 +30,8 @@ public class ImagePanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.drawImage(thumbnail, 0, 0, 600, 600, this);
+		for(SearchTeams t : main.teams) {
+			t.draw(g, tracker);
+		}
 	}
 }

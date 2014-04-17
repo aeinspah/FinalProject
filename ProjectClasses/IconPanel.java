@@ -14,10 +14,11 @@ public class IconPanel extends JPanel {
 	private Image thumbnail1;
 	private Image thumbnail2;
 	private Image thumbnail3;
+	MediaTracker tracker;
 	public IconPanel() {
 		this.setPreferredSize(new Dimension(200,600));
 		setBackground(Color.CYAN);
-		MediaTracker tracker = new MediaTracker(this);
+		tracker = new MediaTracker(this);
 		URL url = getClass().getResource("/Images/dogsymbol.gif");
 		Image original = Toolkit.getDefaultToolkit().getImage(url);
 		tracker.addImage(original, 1);
