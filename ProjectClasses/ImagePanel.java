@@ -31,7 +31,7 @@ public class ImagePanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		g.drawImage(thumbnail, 0, 0, 600, 600, this);
 		for(SearchTeams t : main.teams) {
-			t.draw(g, tracker);
+			t.draw(g);
 		}
 	}
 }
