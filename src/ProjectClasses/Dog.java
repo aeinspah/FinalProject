@@ -17,9 +17,6 @@ public class Dog extends SearchTeams {
 	public Dog() {
 		super();
 		visitedLocations = new ArrayList<Node>();
-		URL url = getClass().getResource("/Images/dogsymbol.gif");
-		Image original = Toolkit.getDefaultToolkit().getImage(url);
-		thumbnail1 = original.getScaledInstance(32, 32,  Image.SCALE_FAST);
 	}
 	
 	public void updateLocation(Node node) {
@@ -42,6 +39,11 @@ public class Dog extends SearchTeams {
 		int stringLen = (int)g.getFontMetrics().getStringBounds(teamName, g).getWidth();  
         int start = 50/2 - stringLen/2;  
         g.drawString(teamName, start + location.x -25, location.y-25);
-		g.drawImage(thumbnail1, location.x-16, location.y-16, 32, 32, null);
+	}
+	
+	@Override
+	public Boolean isDog() {
+		return true;
 	}
 }
+

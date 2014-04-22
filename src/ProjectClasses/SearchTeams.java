@@ -58,6 +58,18 @@ public abstract class SearchTeams {
 		g2.setColor(Color.RED);
 		g2.setComposite(AlphaComposite.SrcOver.derive(0.3f));
 	}
+	
+	public Boolean isHeli() {
+		return false;
+	}
+	
+	public Boolean isHiker() {
+		return false;
+	}
+	
+	public Boolean isDog() {
+		return false;
+	}
 
 	public abstract void draw(Graphics g);
 

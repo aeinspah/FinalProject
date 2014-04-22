@@ -26,7 +26,7 @@ public class Main extends JFrame {
 		img = new ImagePanel(this);
 		img.setSize(600,600);
 		add(img, BorderLayout.WEST);
-		IconPanel icons = new IconPanel();
+		IconPanel icons = new IconPanel(this);
 		icons.setSize(200,600);
 		add(icons, BorderLayout.EAST);
 	}
