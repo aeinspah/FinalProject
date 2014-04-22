@@ -27,10 +27,6 @@ public class Hiker extends SearchTeams {
 		return 0; 
 	}
 	
-	public void predictMovement() {
-		// call updateLovation
-	}
-	
 	@Override
 	public void draw(Graphics g) {
 		highlightSearchedArea(g, 40);

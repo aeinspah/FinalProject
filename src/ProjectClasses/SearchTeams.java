@@ -70,6 +70,20 @@ public abstract class SearchTeams {
 	public Boolean isDog() {
 		return false;
 	}
+	
+	public Node predictMovement() {
+		Node p2 = visitedLocations.get(visitedLocations.size()-1);
+		Node p1 = location;
+		System.out.println(p1 + ", " + p2);
+		double dist = Math.sqrt(  ( (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)));
+		double angle = Math.atan2(p1.y - p2.y, p1.x - p2.x);
+		
+		System.out.println("Dist = " + dist + ", angle = " + angle);
+		
+		Node p3 = new Node(p1.x + (int)(dist * Math.cos(angle)), p1.y + (int)(dist * Math.sin(angle)));
+		System.out.println(p3);
+		return p3;
+	}
 
 	public abstract void draw(Graphics g);
 

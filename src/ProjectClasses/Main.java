@@ -43,11 +43,11 @@ public class Main extends JFrame {
 	    		h.visitedLocations.add(new Node(400,250));
 	    		h.teamName = "Hiker 1";
 	    		Helicopter h2 = new Helicopter();
-	    		h2.updateLocation(new Node(500,500));
+	    		h2.updateLocation(new Node(300,500));
 	    		h2.visitedLocations.add(new Node(100,100));
 	    		h2.visitedLocations.add(new Node(100,300));
 	    		h2.visitedLocations.add(new Node(100,500));
-	    		h2.visitedLocations.add(new Node(300,500));
+	    		//h2.visitedLocations.add(new Node(300,500));
 	    		h2.teamName = "Heli 1";
 	    		Dog d = new Dog();
 	    		d.updateLocation(new Node(550,100));
