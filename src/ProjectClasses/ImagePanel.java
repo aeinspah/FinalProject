@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.net.URL;
 
 import javax.swing.JPanel;
@@ -45,6 +47,7 @@ public class ImagePanel extends JPanel {
 		thumbnail1 = original1.getScaledInstance(32, 32,  Image.SCALE_FAST);
 		thumbnail2 = original2.getScaledInstance(32, 32,  Image.SCALE_FAST);
 		thumbnail3 = original3.getScaledInstance(32, 32,  Image.SCALE_FAST);
+		addMouseMotionListener(new MouseMotionHandler());
 	}
 	@Override
 	public void paintComponent(Graphics g) {
@@ -52,11 +55,25 @@ public class ImagePanel extends JPanel {
 		for(SearchTeams t : main.teams) {
 			t.draw(g);
 			if(t.isDog())
-				g.drawImage(thumbnail1, t.location.x-16, t.location.y-16, 32, 32, null);
+				g.drawImage(thumbnail1, t.location.x-16, t.location.y-16, 32, 32, this);
 			else if(t.isHeli())
-				g.drawImage(thumbnail2, t.location.x-16, t.location.y-16, 32, 32, null);
+				g.drawImage(thumbnail2, t.location.x-16, t.location.y-16, 32, 32, this);
 			else if(t.isHiker())
-				g.drawImage(thumbnail3, t.location.x-16, t.location.y-16, 32, 32, null);
+				g.drawImage(thumbnail3, t.location.x-16, t.location.y-16, 32, 32, this);
+		}
+	}
+	
+	class MouseMotionHandler extends MouseMotionAdapter {
+		public void mouseDragged(MouseEvent e) {
+			int x = e.getX();
+			int y = e.getY();
+			for(SearchTeams t : main.teams) {
+				if(x < t.location.x+16 && x > t.location.x-16 && y < t.location.y+16 && y > t.location.y-16) {
+					t.location = new Node(x,y);
+					break;
+				}
+			}
+			repaint();
 		}
 	}
 }

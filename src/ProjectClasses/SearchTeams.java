@@ -72,17 +72,33 @@ public abstract class SearchTeams {
 	}
 	
 	public Node predictMovement() {
-		Node p2 = visitedLocations.get(visitedLocations.size()-1);
 		Node p1 = location;
+		if(visitedLocations.size() == 0) {
+			double dist = 10;
+			double angle = 0;
+			Node p3 = new Node(p1.x + (int)(dist * Math.cos(angle)), p1.y + (int)(dist * Math.sin(angle)));
+			return p3;
+		}
+		Node p2 = visitedLocations.get(visitedLocations.size()-1);
 		System.out.println(p1 + ", " + p2);
 		double dist = Math.sqrt(  ( (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)));
 		double angle = Math.atan2(p1.y - p2.y, p1.x - p2.x);
-		
 		System.out.println("Dist = " + dist + ", angle = " + angle);
-		
 		Node p3 = new Node(p1.x + (int)(dist * Math.cos(angle)), p1.y + (int)(dist * Math.sin(angle)));
-		System.out.println(p3);
-		return p3;
+		if(p3.isValid())
+			return p3;
+		double a1, a2;
+		a1 = a2 = angle;
+		while(true) {
+			a1 += Math.PI/8;
+			a2 -= Math.PI/8;
+			Node p4 = new Node(p1.x + (int)(dist * Math.cos(a1)), p1.y + (int)(dist * Math.sin(a1)));
+			Node p5 = new Node(p1.x + (int)(dist * Math.cos(a2)), p1.y + (int)(dist * Math.sin(a2)));
+			if(p4.isValid())
+				return p4;
+			if(p5.isValid())
+				return p5;
+		}
 	}
 
 	public abstract void draw(Graphics g);
