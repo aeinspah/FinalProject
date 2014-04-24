@@ -98,14 +98,11 @@ public abstract class SearchTeams {
 				return p5;
 		}
 	}
-
+	// for test purposes
 	public ArrayList<Node> getVisitedLocations() {
 		return visitedLocations;
 	}
 
-	public void setVisitedLocations(ArrayList<Node> visitedLocations) {
-		this.visitedLocations = visitedLocations;
-	}
 
 	public abstract void draw(Graphics g);
 

@@ -47,6 +47,13 @@ public class DialogBox extends JDialog{
 		add(box);
 		add(new okcancel(this));
 	}
+	// for testing purposes
+	public JComboBox<String> getBox() {
+		return box;
+	}
+	public void setBox(JComboBox<String> box) {
+		this.box = box;
+	}
 	public class okcancel extends JPanel {
 		
 		public okcancel(final DialogBox d) {

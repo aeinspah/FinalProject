@@ -9,6 +9,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ProjectClasses.DialogBox;
 import ProjectClasses.Dog;
 import ProjectClasses.Helicopter;
 import ProjectClasses.Hiker;
@@ -84,6 +85,7 @@ public class Part2Tests {
 		expected = new Node(24, 3);
 		actual = dog.getLocation();
 		Assert.assertTrue(expected.equals(actual));
+		
 	}
 
 }
