@@ -80,10 +80,8 @@ public abstract class SearchTeams {
 			return p3;
 		}
 		Node p2 = visitedLocations.get(visitedLocations.size()-1);
-		System.out.println(p1 + ", " + p2);
 		double dist = Math.sqrt(  ( (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)));
 		double angle = Math.atan2(p1.y - p2.y, p1.x - p2.x);
-		System.out.println("Dist = " + dist + ", angle = " + angle);
 		Node p3 = new Node(p1.x + (int)(dist * Math.cos(angle)), p1.y + (int)(dist * Math.sin(angle)));
 		if(p3.isValid())
 			return p3;

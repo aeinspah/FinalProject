@@ -22,7 +22,7 @@ public class Main extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Final Project");
 		//setLayout(new GridLayout(1,2));
-		setSize(800, 650);
+		setSize(800, 625);
 		img = new ImagePanel(this);
 		img.setSize(600,600);
 		add(img, BorderLayout.WEST);
