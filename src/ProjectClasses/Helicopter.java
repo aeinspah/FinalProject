@@ -23,8 +23,8 @@ public class Helicopter extends SearchTeams {
 		location = node;
 	}
 	
-	public int getLocation() {
-		return 0; 
+	public Node getLocation() {
+		return location; 
 	}
 	
 	

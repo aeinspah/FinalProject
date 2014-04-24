@@ -10,6 +10,7 @@ import ProjectClasses.Main;
 import ProjectClasses.Hiker;
 import ProjectClasses.Helicopter;
 import ProjectClasses.Dog;
+import ProjectClasses.Node;
 
 public class ProjectTests {
 	
@@ -27,15 +28,15 @@ public class ProjectTests {
 	
 	@Test
 	public void testPredictMovement() {
-		hiker.predictMovement();
-		int expected = 5; //expected location after movement
-		int actual = hiker.getLocation();
+	//	hiker.predictMovement();
+		Node expected = new Node(0, 0); //expected location after movement
+		Node actual = hiker.getLocation();
 		Assert.assertEquals(expected, actual);
-		helicopter.predictMovement();
-		expected = 5;
+	//	helicopter.predictMovement();
+		expected = new Node(0, 0);
 		actual = helicopter.getLocation();
 		Assert.assertEquals(expected, actual);
-		expected = 5; 
+		expected = new Node(0, 0); 
 		actual = dog.getLocation();
 		Assert.assertEquals(expected, actual);
 	}
