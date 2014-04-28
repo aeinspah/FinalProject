@@ -45,7 +45,7 @@ public class DialogBox extends JDialog{
 		JLabel label = new JLabel("Select a team to add a new point to: ");
 		add(label);
 		add(box);
-		add(new okcancel(this));
+		add(new OkCancel(this));
 	}
 	// for testing purposes
 	public JComboBox<String> getBox() {
@@ -54,9 +54,9 @@ public class DialogBox extends JDialog{
 	public void setBox(JComboBox<String> box) {
 		this.box = box;
 	}
-	public class okcancel extends JPanel {
+	public class OkCancel extends JPanel {
 		
-		public okcancel(final DialogBox d) {
+		public OkCancel(final DialogBox d) {
 			JButton ok = new JButton("Submit");
 			JButton cancel = new JButton("Cancel");
 			add(ok);
@@ -67,7 +67,7 @@ public class DialogBox extends JDialog{
 			    	// Pushed OK
 			    	if(((String)box.getSelectedItem()).equals("New Team")) {
 			    		// Add a new team
-			    		selectTeamName x = new selectTeamName(d.m, d.type);
+			    		SelectTeamName x = new SelectTeamName(d.m, d.type);
 				    	x.setVisible(true);
 			    	} else {
 			    		for(SearchTeams t : m.teams) {
@@ -93,8 +93,8 @@ public class DialogBox extends JDialog{
 			});
 		}
 	}
-	public class selectTeamName extends JDialog {
-		public selectTeamName(final Main m, final int type) {
+	public class SelectTeamName extends JDialog {
+		public SelectTeamName(final Main m, final int type) {
 			setSize(200,200);
 			setTitle("Select Name");
 			setLayout(new GridLayout(4,1));

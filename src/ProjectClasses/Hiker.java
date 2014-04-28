@@ -11,9 +11,6 @@ import java.util.ArrayList;
 
 public class Hiker extends SearchTeams {
 	
-	private double speed;
-	private Image thumbnail1;
-	
 	public Hiker() {
 		super();
 		visitedLocations = new ArrayList<Node>();

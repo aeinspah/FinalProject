@@ -11,9 +11,6 @@ import java.util.ArrayList;
 
 public class Dog extends SearchTeams {
 	
-	private double speed;
-	private Image thumbnail1;
-	
 	public Dog() {
 		super();
 		visitedLocations = new ArrayList<Node>();

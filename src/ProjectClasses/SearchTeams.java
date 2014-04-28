@@ -14,7 +14,6 @@ import java.util.Vector;
 
 public abstract class SearchTeams {
 
-	public Vector nodes;
 	public String teamName;
 	public Node location;
 	public ArrayList<Node> visitedLocations;

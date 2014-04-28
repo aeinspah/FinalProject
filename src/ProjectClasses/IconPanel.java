@@ -65,12 +65,12 @@ public class IconPanel extends JPanel {
 		add(but2);
 		add(but3);
 		
-		but1.addMouseListener(new listen());
-		but2.addMouseListener(new listen());
-		but3.addMouseListener(new listen());
+		but1.addMouseListener(new Listen());
+		but2.addMouseListener(new Listen());
+		but3.addMouseListener(new Listen());
 	}
 	
-	public class listen implements MouseListener {
+	public class Listen implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {

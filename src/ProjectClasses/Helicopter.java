@@ -11,9 +11,6 @@ import java.util.ArrayList;
 
 public class Helicopter extends SearchTeams {
 	
-	private double speed;
-	private Image thumbnail1;
-	
 	public Helicopter( ) {
 		super();
 		visitedLocations = new ArrayList<Node>();
